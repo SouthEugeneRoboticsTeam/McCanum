@@ -15,7 +15,7 @@ class JoystickDrive : CommandBase() {
         val speed = if (SmartDashboard.getBoolean("Slow Mode", true)) {
             0.8
         } else {
-            2.0
+            2.1
         }
 
         //Make go sideways better
