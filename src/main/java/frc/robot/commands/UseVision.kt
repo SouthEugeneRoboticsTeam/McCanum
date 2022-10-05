@@ -12,7 +12,7 @@ class UseVision : CommandBase() {
     private val forwardPID = PIDController(0.3, 0.3, 0.0)
 
     init {
-        addRequirements(Vision)
+        addRequirements(Drivetrain, Vision)
     }
 
     override fun initialize() {
@@ -25,7 +25,7 @@ class UseVision : CommandBase() {
         var forwardError = 0.0
 
         val lastUpdateTime = Vision.getMillisSinceUpdate()
-        if (lastUpdateTime != null && lastUpdateTime <= 1000) {
+        if (lastUpdateTime != null && lastUpdateTime <= 250) {
             angleError = Vision.getTargetAngle()
             if (abs(angleError) < 0.25) {
                 forwardError = Vision.getTargetDistance() - 1
