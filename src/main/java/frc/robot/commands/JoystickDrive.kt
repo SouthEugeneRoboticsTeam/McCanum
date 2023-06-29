@@ -4,6 +4,8 @@ import edu.wpi.first.math.kinematics.ChassisSpeeds
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard
 import edu.wpi.first.wpilibj2.command.CommandBase
 import frc.robot.Input
+import frc.robot.drivespeedFast
+import frc.robot.drivespeedSlow
 import frc.robot.subsystems.Drivetrain
 
 class JoystickDrive : CommandBase() {
@@ -13,9 +15,9 @@ class JoystickDrive : CommandBase() {
 
     override fun execute() {
         val speed = if (SmartDashboard.getBoolean("Slow Mode", true)) {
-            0.8
+            drivespeedSlow
         } else {
-            2.1
+            drivespeedFast
         }
 
         //Make go sideways better

@@ -12,5 +12,10 @@ const val driveP = 0.5
 const val driveI = 0.0
 const val driveD = 0.0
 
-const val wheelPerimeter = 1.2566
+const val wheelPerimeter = 0.6283
 const val driveDistancePerPulse = wheelPerimeter / 8192
+
+const val drivespeedFast = 2.1
+const val drivespeedSlow = 0.8
+
+cost val shooterMotorID = 0
